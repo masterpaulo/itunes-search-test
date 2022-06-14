@@ -22,9 +22,17 @@ class SearchListViewModel: BaseViewModel {
     @Published var searchText: String = ""
     
     @Published var movieList: [Item] = []
+    
+    @Published var selectedItem: Item?
 
     private var subscriptions: Set<AnyCancellable> = Set<AnyCancellable>()
 
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.lastVisitDate, order: .reverse)],
+        predicate: NSPredicate(format: "lastVisitDate != nil")
+    )
+    var vistedItems: FetchedResults<Item>
+    
     // MARK: - init
     
     override init() {
@@ -32,8 +40,19 @@ class SearchListViewModel: BaseViewModel {
         self.bindViewModel()
     }
     
-    // MARK: - Bindings
+    // MARK: - Methods
     
+    func clearRecentVisited(items: [Item]) {
+        items.forEach { item in
+            item.lastVisitDate = nil
+            DataManager.shared.save(item: item)
+        }
+    }
+}
+
+// MARK: - Bindings
+
+extension SearchListViewModel {
     func bindViewModel() {
         bindSearhText()
         bindManagedObjectConttextDidSave()
@@ -43,9 +62,14 @@ class SearchListViewModel: BaseViewModel {
         $searchText
             .debounce(for: 1, scheduler: RunLoop.main)
             .sink { [unowned self] text in
-                // Only trigger request if search text has more than 3 characters
-                guard text.count > 3 else { return }
-                self.fetchItems(search: text)
+                switch text.count {
+                case ...0:
+                    self.movieList = []
+                case 3...:
+                    self.fetchItems(search: text)
+                default:
+                    break
+                }
             }
             .store(in: &subscriptions)
     }
@@ -58,7 +82,6 @@ class SearchListViewModel: BaseViewModel {
             }
             .store(in: &subscriptions)
     }
-
 }
 
 // MARK: - Display Properties
@@ -70,6 +93,10 @@ extension SearchListViewModel {
     
     var showLoadingIndicator: Bool {
         movieList.isEmpty && loadingState == .loading
+    }
+    
+    var showRecentlyVisited: Bool {
+        movieList.isEmpty && loadingState == .idle
     }
 }
 

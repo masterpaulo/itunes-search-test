@@ -63,6 +63,7 @@ struct FavoritesListView: View {
         VStack(alignment: .center, spacing: 12) {
             Image(systemName: "questionmark.folder")
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
                 .foregroundColor(.secondary)
             Text("List is Empty")
@@ -71,6 +72,9 @@ struct FavoritesListView: View {
                 .bold()
             
             Text("You do not have any Favorite Items yet.")
+                .frame(width: 300)
+                .multilineTextAlignment(.center)
+                .font(.system(size: 14))
                 .foregroundColor(.secondary)
         }
     }

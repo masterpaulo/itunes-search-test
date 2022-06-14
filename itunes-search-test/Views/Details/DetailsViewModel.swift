@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 class DetailsViewModel: ObservableObject {
     
@@ -32,6 +33,7 @@ class DetailsViewModel: ObservableObject {
     }
     
     func saveItemToContext() {
+        movie.lastVisitDate = Date()
         DataManager.shared.save(item: movie)
     }
 }
@@ -46,7 +48,7 @@ extension DetailsViewModel {
     var price: String { "\(movie.trackPrice) \(movie.currency)" }
     
     var lastVisitDateText: String? {
-        guard let date = movie.lastVisitDate?.stringFormat("MM/dd/YYYY") else { return nil }
+        guard let date = movie.lastVisitDate?.stringFormat("MM/dd/YYYY hh:mm:ss a") else { return nil }
         return "Last visited on: \(date)"
     }
 }

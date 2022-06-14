@@ -75,7 +75,7 @@ struct DetailsView: View {
                 }
             }
         }
-        .onAppear {
+        .onDisappear {
             viewModel.saveItemToContext()
         }
     }

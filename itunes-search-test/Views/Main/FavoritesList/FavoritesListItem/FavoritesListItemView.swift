@@ -18,8 +18,9 @@ struct FavoritesListItemView: View {
                 .placeholder {
                     Image("placeholder")
                         .resizable()
-                        .frame(height: 100)
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 67, height: 100)
+                        .clipped()
                 }
                 .resizable()
                 .frame(height: 100)
