@@ -42,10 +42,10 @@ Also, items that where saved with last visit date values are displayed in the Re
 Persisted data can be erased using default interface controls provided.
 
 
-## Developed With
+## Requirements
 
-- Xcode 13.3.1
-- iOS simulator version 15.4
+- Xcode 13.3.1+
+- Minimum iOS deployment target 15.0
 
 ## Dependencies Used
 
