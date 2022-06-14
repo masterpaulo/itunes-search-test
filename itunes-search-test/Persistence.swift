@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  itunes-search-test
 //
-//  Created by Master Paulo on 6/14/22.
+//  Created by John Paulo on 6/14/22.
 //
 
 import CoreData
@@ -13,9 +13,9 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for i in 0..<10 {
             let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            newItem.trackName = "Track #\(i)"
         }
         do {
             try viewContext.save()
