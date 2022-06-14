@@ -14,8 +14,8 @@
 		21770DB628584E2000ECB5D7 /* itunes_search_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21770DB428584E2000ECB5D7 /* itunes_search_test.xcdatamodeld */; };
 		21770DBE2858BB5700ECB5D7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DBD2858BB5700ECB5D7 /* Item.swift */; };
 		21770DC12858BD2600ECB5D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC02858BD2600ECB5D7 /* MainView.swift */; };
-		21770DC72858BE1D00ECB5D7 /* MainListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC62858BE1D00ECB5D7 /* MainListItemViewModel.swift */; };
-		21770DC92858BE3900ECB5D7 /* MainListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC82858BE3900ECB5D7 /* MainListItemView.swift */; };
+		21770DC72858BE1D00ECB5D7 /* SearchListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC62858BE1D00ECB5D7 /* SearchListItemViewModel.swift */; };
+		21770DC92858BE3900ECB5D7 /* SearchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC82858BE3900ECB5D7 /* SearchListItemView.swift */; };
 		21770DCC2858BF0900ECB5D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DCB2858BF0900ECB5D7 /* Constants.swift */; };
 		21770DCE2858BF1E00ECB5D7 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DCD2858BF1E00ECB5D7 /* AppError.swift */; };
 		21770DD12858BF8100ECB5D7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 21770DD02858BF8100ECB5D7 /* Alamofire */; };
@@ -34,6 +34,8 @@
 		21770DF62858D4F600ECB5D7 /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DF52858D4F600ECB5D7 /* SearchListViewModel.swift */; };
 		21770DF82858D54E00ECB5D7 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DF72858D54E00ECB5D7 /* FavoritesListViewModel.swift */; };
 		21770DFA2858DE5200ECB5D7 /* DataManager+Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DF92858DE5200ECB5D7 /* DataManager+Item.swift */; };
+		21770DFE2859035E00ECB5D7 /* FavoritesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DFD2859029100ECB5D7 /* FavoritesListItemView.swift */; };
+		21770DFF2859036000ECB5D7 /* FavoritesListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DFC2859029000ECB5D7 /* FavoritesListItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +47,8 @@
 		21770DB528584E2000ECB5D7 /* itunes_search_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = itunes_search_test.xcdatamodel; sourceTree = "<group>"; };
 		21770DBD2858BB5700ECB5D7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		21770DC02858BD2600ECB5D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		21770DC62858BE1D00ECB5D7 /* MainListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListItemViewModel.swift; sourceTree = "<group>"; };
-		21770DC82858BE3900ECB5D7 /* MainListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListItemView.swift; sourceTree = "<group>"; };
+		21770DC62858BE1D00ECB5D7 /* SearchListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListItemViewModel.swift; sourceTree = "<group>"; };
+		21770DC82858BE3900ECB5D7 /* SearchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListItemView.swift; sourceTree = "<group>"; };
 		21770DCB2858BF0900ECB5D7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21770DCD2858BF1E00ECB5D7 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		21770DD62858BFB800ECB5D7 /* APIConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		21770DF52858D4F600ECB5D7 /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
 		21770DF72858D54E00ECB5D7 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 		21770DF92858DE5200ECB5D7 /* DataManager+Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Item.swift"; sourceTree = "<group>"; };
+		21770DFC2859029000ECB5D7 /* FavoritesListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListItemViewModel.swift; sourceTree = "<group>"; };
+		21770DFD2859029100ECB5D7 /* FavoritesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,18 +146,17 @@
 				21770DF02858D41400ECB5D7 /* FavoritesList */,
 				21770DEF2858D40800ECB5D7 /* SearchList */,
 				21770DC02858BD2600ECB5D7 /* MainView.swift */,
-				21770DC52858BDEC00ECB5D7 /* MainListItem */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		21770DC52858BDEC00ECB5D7 /* MainListItem */ = {
+		21770DC52858BDEC00ECB5D7 /* SearchListItem */ = {
 			isa = PBXGroup;
 			children = (
-				21770DC82858BE3900ECB5D7 /* MainListItemView.swift */,
-				21770DC62858BE1D00ECB5D7 /* MainListItemViewModel.swift */,
+				21770DC82858BE3900ECB5D7 /* SearchListItemView.swift */,
+				21770DC62858BE1D00ECB5D7 /* SearchListItemViewModel.swift */,
 			);
-			path = MainListItem;
+			path = SearchListItem;
 			sourceTree = "<group>";
 		};
 		21770DCA2858BEF300ECB5D7 /* Core */ = {
@@ -241,6 +244,7 @@
 			children = (
 				21770DF32858D47900ECB5D7 /* SearchListView.swift */,
 				21770DF52858D4F600ECB5D7 /* SearchListViewModel.swift */,
+				21770DC52858BDEC00ECB5D7 /* SearchListItem */,
 			);
 			path = SearchList;
 			sourceTree = "<group>";
@@ -250,8 +254,18 @@
 			children = (
 				21770DF12858D46A00ECB5D7 /* FavoritesListView.swift */,
 				21770DF72858D54E00ECB5D7 /* FavoritesListViewModel.swift */,
+				21770DFB2858FD5D00ECB5D7 /* FavoritesListItem */,
 			);
 			path = FavoritesList;
+			sourceTree = "<group>";
+		};
+		21770DFB2858FD5D00ECB5D7 /* FavoritesListItem */ = {
+			isa = PBXGroup;
+			children = (
+				21770DFD2859029100ECB5D7 /* FavoritesListItemView.swift */,
+				21770DFC2859029000ECB5D7 /* FavoritesListItemViewModel.swift */,
+			);
+			path = FavoritesListItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,12 +349,14 @@
 				21770DF62858D4F600ECB5D7 /* SearchListViewModel.swift in Sources */,
 				21770DF22858D46A00ECB5D7 /* FavoritesListView.swift in Sources */,
 				21770DBE2858BB5700ECB5D7 /* Item.swift in Sources */,
-				21770DC72858BE1D00ECB5D7 /* MainListItemViewModel.swift in Sources */,
+				21770DC72858BE1D00ECB5D7 /* SearchListItemViewModel.swift in Sources */,
 				21770DCE2858BF1E00ECB5D7 /* AppError.swift in Sources */,
 				21770DB328584E2000ECB5D7 /* DataManager.swift in Sources */,
 				21770DAA28584E1E00ECB5D7 /* ITunesSearchApp.swift in Sources */,
+				21770DFE2859035E00ECB5D7 /* FavoritesListItemView.swift in Sources */,
+				21770DFF2859036000ECB5D7 /* FavoritesListItemViewModel.swift in Sources */,
 				21770DF82858D54E00ECB5D7 /* FavoritesListViewModel.swift in Sources */,
-				21770DC92858BE3900ECB5D7 /* MainListItemView.swift in Sources */,
+				21770DC92858BE3900ECB5D7 /* SearchListItemView.swift in Sources */,
 				21770DE02858C04700ECB5D7 /* APIManager+Search.swift in Sources */,
 				21770DE42858C07A00ECB5D7 /* Date+StringFormat.swift in Sources */,
 				21770DD72858BFB800ECB5D7 /* APIConfigurationProtocol.swift in Sources */,

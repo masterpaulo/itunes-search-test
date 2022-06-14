@@ -13,4 +13,10 @@ import Combine
 
 class FavoritesListViewModel: BaseViewModel {
     
+    // MARK: - Methods
+    
+    func removeFavorite(item: Item) {
+        item.isFavorite = false
+        DataManager.shared.save(item: item)
+    }
 }

@@ -28,11 +28,50 @@ struct FavoritesListView: View {
                     NavigationLink(destination: DetailsView(viewModel: detailsVM),
                                    tag: Int(item.trackId),
                                    selection: $selectedTrackId) {
-                        MainListItemView(viewModel: MainListItemViewModel(item: item))
+                        FavoritesListItemView(viewModel: FavoritesListItemViewModel(item: item))
                     }
+                    
                 }
+                .onDelete(perform: removeFavorites)
             }
+            .toolbar(content: {
+                if !items.isEmpty {
+                    EditButton()
+                }
+            })
+            .listStyle(InsetListStyle())
+            .overlay(content: {
+                if items.isEmpty {
+                    noDataFoundView
+                }
+            })
             .navigationBarTitle("Favorites")
+        }
+    }
+    
+    private func removeFavorites(at offsets: IndexSet) {
+        for index in offsets {
+            let item = items[index]
+            viewModel.removeFavorite(item: item)
+        }
+    }
+    
+    // MARK: - Accessory Views
+    
+    @ViewBuilder
+    var noDataFoundView: some View {
+        VStack(alignment: .center, spacing: 12) {
+            Image(systemName: "questionmark.folder")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .foregroundColor(.secondary)
+            Text("List is Empty")
+                .foregroundColor(.secondary)
+                .font(.system(size: 24))
+                .bold()
+            
+            Text("You do not have any Favorite Items yet.")
+                .foregroundColor(.secondary)
         }
     }
 }

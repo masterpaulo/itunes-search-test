@@ -20,11 +20,12 @@ struct SearchListView: View {
                     NavigationLink(destination: DetailsView(viewModel: detailsVM),
                                    tag: Int(movie.trackId),
                                    selection: $selectedTrackId) {
-                        MainListItemView(viewModel: MainListItemViewModel(item: movie))
+                        SearchListItemView(viewModel: SearchListItemViewModel(item: movie))
                             
                     }
                 }
             }
+            .listStyle(InsetListStyle())
             .overlay(content: {
                 if viewModel.showNotTableDataView {
                     noDataFoundView
@@ -46,7 +47,7 @@ struct SearchListView: View {
     @ViewBuilder
     var noDataFoundView: some View {
         VStack(alignment: .center) {
-            Image(systemName: "exclamation")
+            Image(systemName: "questionmark.folder")
             Text("No Data Found")
                 .font(.system(size: 24))
                 .bold()
