@@ -32,6 +32,15 @@ struct DetailsView: View {
                         Text(viewModel.movie.genre)
                             .font(.system(size: 12))
                             .fontWeight(.thin)
+                        Spacer()
+                        Text(viewModel.price)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .font(.system(size: 14))
+                            .padding(.vertical, 2)
+                            .padding(.horizontal, 8)
+                            .background(Color.gray)
+                            .cornerRadius(10)
                     }
                     .padding()
                     

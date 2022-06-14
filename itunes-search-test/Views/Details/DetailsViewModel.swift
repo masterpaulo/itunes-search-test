@@ -43,6 +43,7 @@ extension DetailsViewModel {
     var genre: String { movie.genre }
     var description: String { movie.longDescription ?? "" }
     var imageURL: String { movie.artworkStringUrl }
+    var price: String { "\(movie.trackPrice) \(movie.currency)" }
     
     var lastVisitDateText: String? {
         guard let date = movie.lastVisitDate?.stringFormat("MM/dd/YYYY") else { return nil }
