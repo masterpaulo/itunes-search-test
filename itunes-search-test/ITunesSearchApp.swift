@@ -13,7 +13,7 @@ struct ITunesSearchApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Text("Main")
+            MainView()
         }
     }
 }
