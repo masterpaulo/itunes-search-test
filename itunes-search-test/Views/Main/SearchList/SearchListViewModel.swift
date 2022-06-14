@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  SearchListViewModel.swift
 //  itunes-search-test
 //
 //  Created by John Paulo on 6/14/22.
@@ -11,7 +11,7 @@ import CoreData
 import SwiftUI
 import Combine
 
-class MainViewModel: BaseViewModel {
+class SearchListViewModel: BaseViewModel {
     
    // MARK: - Published Properites
     
@@ -51,7 +51,7 @@ class MainViewModel: BaseViewModel {
 
 // MARK: - Display Properties
 
-extension MainViewModel {
+extension SearchListViewModel {
     var showNotTableDataView: Bool {
         !searchText.isEmpty && movieList.isEmpty && loadingState == .loaded
     }
@@ -63,7 +63,7 @@ extension MainViewModel {
 
 // MARK: - Network Connections
 
-extension MainViewModel {
+extension SearchListViewModel {
     func fetchItems(search text: String) {
         let encodedText = text.replacingOccurrences(of: " ", with: "+")
         loadingState = .loading
