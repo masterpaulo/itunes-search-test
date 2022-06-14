@@ -44,7 +44,7 @@ public class Item: NSManagedObject, Decodable {
     @NSManaged var genre: String
     @NSManaged var trackPrice: Float
     @NSManaged var currency: String
-    @NSManaged var longDescription: String
+    @NSManaged var longDescription: String?
     
     
     @NSManaged var lastVisitDate: Date?
@@ -57,7 +57,7 @@ public class Item: NSManagedObject, Decodable {
                 K.APIParameterKey.genre: self.genre,
                 K.APIParameterKey.trackPrice: self.trackPrice,
                 K.APIParameterKey.currency: self.currency,
-                K.APIParameterKey.longDescription: self.longDescription,
+                K.APIParameterKey.longDescription: self.longDescription ?? "",
                 K.APIParameterKey.isFavorite: self.isFavorite]
     }
 
@@ -82,10 +82,10 @@ public class Item: NSManagedObject, Decodable {
         genre = try container.decode(String.self, forKey: .genre)
         trackPrice = try container.decode(Float.self, forKey: .trackPrice)
         currency = try container.decode(String.self, forKey: .currency)
-        longDescription = try container.decode(String.self, forKey: .longDescription)
+        longDescription = try container.decodeIfPresent(String.self, forKey: .longDescription)
     }
     
-    convenience init(trackId: Int64, trackName: String, artworkStringUrl: String, genre: String, trackPrice: Float, currency: String, longDescription: String, isFavorite: Bool, lastVisitDate: Date? = nil) {
+    convenience init(trackId: Int64, trackName: String, artworkStringUrl: String, genre: String, trackPrice: Float, currency: String, longDescription: String?, isFavorite: Bool, lastVisitDate: Date? = nil) {
         
         let context = PersistenceController.shared.container.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: K.CoreDataEntity.item, in: context) else { fatalError() }
@@ -104,7 +104,7 @@ public class Item: NSManagedObject, Decodable {
     }
     
     convenience init?(dictionary: [String: Any]) {
-        guard let trackId = dictionary[K.APIParameterKey.trackId] as? Int64, let trackName = dictionary[K.APIParameterKey.trackName] as? String, let artworkUrlString = dictionary[K.APIParameterKey.artworkStringUrl] as? String, let genre = dictionary[K.APIParameterKey.genre] as? String, let trackPrice = dictionary[K.APIParameterKey.trackPrice] as? Float, let currency = dictionary[K.APIParameterKey.currency] as? String, let longDescription = dictionary[K.APIParameterKey.longDescription] as? String, let isFavorite = dictionary[K.APIParameterKey.isFavorite] as? Bool else {
+        guard let trackId = dictionary[K.APIParameterKey.trackId] as? Int64, let trackName = dictionary[K.APIParameterKey.trackName] as? String, let artworkUrlString = dictionary[K.APIParameterKey.artworkStringUrl] as? String, let genre = dictionary[K.APIParameterKey.genre] as? String, let trackPrice = dictionary[K.APIParameterKey.trackPrice] as? Float, let currency = dictionary[K.APIParameterKey.currency] as? String, let longDescription = dictionary[K.APIParameterKey.longDescription] as? String?, let isFavorite = dictionary[K.APIParameterKey.isFavorite] as? Bool else {
             return nil
         }
         self.init(trackId: trackId, trackName: trackName, artworkStringUrl: artworkUrlString, genre: genre, trackPrice: trackPrice, currency: currency, longDescription: longDescription, isFavorite: isFavorite)

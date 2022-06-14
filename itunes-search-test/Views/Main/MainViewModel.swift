@@ -11,7 +11,7 @@ import CoreData
 import SwiftUI
 import Combine
 
-class MainViewModel: ObservableObject {
+class MainViewModel: BaseViewModel {
     
    // MARK: - Published Properites
     
@@ -25,8 +25,8 @@ class MainViewModel: ObservableObject {
 
     // MARK: - init
     
-    init() {
-        
+    override init() {
+        super.init()
         self.bindViewModel()
     }
     
@@ -49,17 +49,32 @@ class MainViewModel: ObservableObject {
 
 }
 
+// MARK: - Display Properties
+
+extension MainViewModel {
+    var showNotTableDataView: Bool {
+        !searchText.isEmpty && movieList.isEmpty && loadingState == .loaded
+    }
+    
+    var showLoadingIndicator: Bool {
+        movieList.isEmpty && loadingState == .loading
+    }
+}
+
 // MARK: - Network Connections
 
 extension MainViewModel {
     func fetchItems(search text: String) {
         let encodedText = text.replacingOccurrences(of: " ", with: "+")
-        APIManager.shared.searchMovieItems(term: encodedText) { [weak self] result in
+        loadingState = .loading
+        requestLoader.searchMovieItems(term: encodedText) { [weak self] result in
             switch result {
             case .success(let list):
                 self?.movieList = list.items
+                self?.loadingState = .loaded
             case .failure(let err):
                 dump(err)
+                self?.loadingState = .error
             }
         }
     }

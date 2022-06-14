@@ -36,7 +36,7 @@ class DetailsViewModel: ObservableObject {
 extension DetailsViewModel {
     var title: String { movie.trackName }
     var genre: String { movie.genre }
-    var description: String { movie.longDescription }
+    var description: String { movie.longDescription ?? "" }
     var imageURL: String { movie.artworkStringUrl }
     
     var lastVisitDateText: String? {
