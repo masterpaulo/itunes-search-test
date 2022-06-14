@@ -27,6 +27,8 @@
 		21770DE02858C04700ECB5D7 /* APIManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DDF2858C04700ECB5D7 /* APIManager+Search.swift */; };
 		21770DE42858C07A00ECB5D7 /* Date+StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DE22858C07A00ECB5D7 /* Date+StringFormat.swift */; };
 		21770DE52858C07A00ECB5D7 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DE32858C07A00ECB5D7 /* AppExtensions.swift */; };
+		21770DE82858C19A00ECB5D7 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DE72858C19A00ECB5D7 /* DetailsViewModel.swift */; };
+		21770DEA2858C1A700ECB5D7 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DE92858C1A700ECB5D7 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		21770DDF2858C04700ECB5D7 /* APIManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Search.swift"; sourceTree = "<group>"; };
 		21770DE22858C07A00ECB5D7 /* Date+StringFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+StringFormat.swift"; sourceTree = "<group>"; };
 		21770DE32858C07A00ECB5D7 /* AppExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
+		21770DE72858C19A00ECB5D7 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		21770DE92858C1A700ECB5D7 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		21770DBF2858BBC400ECB5D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				21770DE62858C18C00ECB5D7 /* Details */,
 				21770DC22858BD5A00ECB5D7 /* Main */,
 			);
 			path = Views;
@@ -191,6 +196,15 @@
 				21770DE22858C07A00ECB5D7 /* Date+StringFormat.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		21770DE62858C18C00ECB5D7 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				21770DE92858C1A700ECB5D7 /* DetailsView.swift */,
+				21770DE72858C19A00ECB5D7 /* DetailsViewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +296,8 @@
 				21770DD72858BFB800ECB5D7 /* APIConfigurationProtocol.swift in Sources */,
 				21770DC12858BD2600ECB5D7 /* MainView.swift in Sources */,
 				21770DB628584E2000ECB5D7 /* itunes_search_test.xcdatamodeld in Sources */,
+				21770DEA2858C1A700ECB5D7 /* DetailsView.swift in Sources */,
+				21770DE82858C19A00ECB5D7 /* DetailsViewModel.swift in Sources */,
 				21770DDA2858BFE700ECB5D7 /* SearchRoutes.swift in Sources */,
 				21770DDE2858C02500ECB5D7 /* APIManager.swift in Sources */,
 				21770DC42858BD6A00ECB5D7 /* MainViewModel.swift in Sources */,

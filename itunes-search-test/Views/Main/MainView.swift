@@ -17,8 +17,8 @@ struct MainView: View {
         NavigationView {
             List {
                 ForEach(viewModel.movieList, id: \.trackId) { movie in
-                    
-                    NavigationLink(destination: Text(movie.trackName),
+                    let detailsVM = DetailsViewModel(movie: movie)
+                    NavigationLink(destination: DetailsView(viewModel: detailsVM),
                                    tag: Int(movie.trackId),
                                    selection: $selectedTrackId) {
                         MainListItemView(viewModel: MainListItemViewModel(item: movie))
