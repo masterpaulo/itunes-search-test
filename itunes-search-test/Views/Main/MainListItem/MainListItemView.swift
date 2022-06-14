@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MainListItemView: View {
     
@@ -13,8 +14,11 @@ struct MainListItemView: View {
     
     var body: some View {
         HStack {
-            Image("placeholder")
-                .resizable()
+            KFImage.url(URL(string: viewModel.imageURL))
+                .placeholder {
+                    Image("placeholder")
+                        .resizable()
+                }
                 .frame(width: 90, height: 90)
                 .aspectRatio(contentMode: .fill)
             VStack(alignment: .leading, spacing: 8) {

@@ -53,7 +53,14 @@ class MainViewModel: ObservableObject {
 
 extension MainViewModel {
     func fetchItems(search text: String) {
-        // Implement fetch items here
+        let encodedText = text.replacingOccurrences(of: " ", with: "+")
+        APIManager.shared.searchMovieItems(term: encodedText) { [weak self] result in
+            switch result {
+            case .success(let list):
+                self?.movieList = list.items
+            case .failure(let err):
+                dump(err)
+            }
+        }
     }
 }
-

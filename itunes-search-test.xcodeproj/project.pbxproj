@@ -17,6 +17,16 @@
 		21770DC42858BD6A00ECB5D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC32858BD6A00ECB5D7 /* MainViewModel.swift */; };
 		21770DC72858BE1D00ECB5D7 /* MainListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC62858BE1D00ECB5D7 /* MainListItemViewModel.swift */; };
 		21770DC92858BE3900ECB5D7 /* MainListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DC82858BE3900ECB5D7 /* MainListItemView.swift */; };
+		21770DCC2858BF0900ECB5D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DCB2858BF0900ECB5D7 /* Constants.swift */; };
+		21770DCE2858BF1E00ECB5D7 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DCD2858BF1E00ECB5D7 /* AppError.swift */; };
+		21770DD12858BF8100ECB5D7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 21770DD02858BF8100ECB5D7 /* Alamofire */; };
+		21770DD42858BF8E00ECB5D7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 21770DD32858BF8E00ECB5D7 /* Kingfisher */; };
+		21770DD72858BFB800ECB5D7 /* APIConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DD62858BFB800ECB5D7 /* APIConfigurationProtocol.swift */; };
+		21770DDA2858BFE700ECB5D7 /* SearchRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DD92858BFE700ECB5D7 /* SearchRoutes.swift */; };
+		21770DDE2858C02500ECB5D7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DDD2858C02500ECB5D7 /* APIManager.swift */; };
+		21770DE02858C04700ECB5D7 /* APIManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DDF2858C04700ECB5D7 /* APIManager+Search.swift */; };
+		21770DE42858C07A00ECB5D7 /* Date+StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DE22858C07A00ECB5D7 /* Date+StringFormat.swift */; };
+		21770DE52858C07A00ECB5D7 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21770DE32858C07A00ECB5D7 /* AppExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +41,14 @@
 		21770DC32858BD6A00ECB5D7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		21770DC62858BE1D00ECB5D7 /* MainListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListItemViewModel.swift; sourceTree = "<group>"; };
 		21770DC82858BE3900ECB5D7 /* MainListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListItemView.swift; sourceTree = "<group>"; };
+		21770DCB2858BF0900ECB5D7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		21770DCD2858BF1E00ECB5D7 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		21770DD62858BFB800ECB5D7 /* APIConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationProtocol.swift; sourceTree = "<group>"; };
+		21770DD92858BFE700ECB5D7 /* SearchRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoutes.swift; sourceTree = "<group>"; };
+		21770DDD2858C02500ECB5D7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		21770DDF2858C04700ECB5D7 /* APIManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Search.swift"; sourceTree = "<group>"; };
+		21770DE22858C07A00ECB5D7 /* Date+StringFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+StringFormat.swift"; sourceTree = "<group>"; };
+		21770DE32858C07A00ECB5D7 /* AppExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21770DD42858BF8E00ECB5D7 /* Kingfisher in Frameworks */,
+				21770DD12858BF8100ECB5D7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,11 +83,13 @@
 		21770DA828584E1E00ECB5D7 /* itunes-search-test */ = {
 			isa = PBXGroup;
 			children = (
+				21770DCA2858BEF300ECB5D7 /* Core */,
 				21770DBF2858BBC400ECB5D7 /* Views */,
 				21770DBC2858BB2100ECB5D7 /* Models */,
+				21770DDB2858C00800ECB5D7 /* Services */,
+				21770DE12858C06900ECB5D7 /* Extensions */,
 				21770DA928584E1E00ECB5D7 /* ITunesSearchApp.swift */,
 				21770DAD28584E2000ECB5D7 /* Assets.xcassets */,
-				21770DB228584E2000ECB5D7 /* Persistence.swift */,
 				21770DB428584E2000ECB5D7 /* itunes_search_test.xcdatamodeld */,
 				21770DAF28584E2000ECB5D7 /* Preview Content */,
 			);
@@ -111,10 +133,64 @@
 		21770DC52858BDEC00ECB5D7 /* MainListItem */ = {
 			isa = PBXGroup;
 			children = (
-				21770DC62858BE1D00ECB5D7 /* MainListItemViewModel.swift */,
 				21770DC82858BE3900ECB5D7 /* MainListItemView.swift */,
+				21770DC62858BE1D00ECB5D7 /* MainListItemViewModel.swift */,
 			);
 			path = MainListItem;
+			sourceTree = "<group>";
+		};
+		21770DCA2858BEF300ECB5D7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				21770DCB2858BF0900ECB5D7 /* Constants.swift */,
+				21770DCD2858BF1E00ECB5D7 /* AppError.swift */,
+				21770DD52858BFA300ECB5D7 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		21770DD52858BFA300ECB5D7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				21770DD62858BFB800ECB5D7 /* APIConfigurationProtocol.swift */,
+				21770DD82858BFD400ECB5D7 /* Routes */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		21770DD82858BFD400ECB5D7 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				21770DD92858BFE700ECB5D7 /* SearchRoutes.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		21770DDB2858C00800ECB5D7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21770DDC2858C01300ECB5D7 /* APIManager */,
+				21770DB228584E2000ECB5D7 /* Persistence.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		21770DDC2858C01300ECB5D7 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				21770DDD2858C02500ECB5D7 /* APIManager.swift */,
+				21770DDF2858C04700ECB5D7 /* APIManager+Search.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		21770DE12858C06900ECB5D7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				21770DE32858C07A00ECB5D7 /* AppExtensions.swift */,
+				21770DE22858C07A00ECB5D7 /* Date+StringFormat.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +209,10 @@
 			dependencies = (
 			);
 			name = "itunes-search-test";
+			packageProductDependencies = (
+				21770DD02858BF8100ECB5D7 /* Alamofire */,
+				21770DD32858BF8E00ECB5D7 /* Kingfisher */,
+			);
 			productName = "itunes-search-test";
 			productReference = 21770DA628584E1E00ECB5D7 /* itunes-search-test.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +241,10 @@
 				Base,
 			);
 			mainGroup = 21770D9D28584E1E00ECB5D7;
+			packageReferences = (
+				21770DCF2858BF8100ECB5D7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				21770DD22858BF8E00ECB5D7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 21770DA728584E1E00ECB5D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -189,12 +273,20 @@
 			files = (
 				21770DBE2858BB5700ECB5D7 /* Item.swift in Sources */,
 				21770DC72858BE1D00ECB5D7 /* MainListItemViewModel.swift in Sources */,
+				21770DCE2858BF1E00ECB5D7 /* AppError.swift in Sources */,
 				21770DB328584E2000ECB5D7 /* Persistence.swift in Sources */,
 				21770DAA28584E1E00ECB5D7 /* ITunesSearchApp.swift in Sources */,
 				21770DC92858BE3900ECB5D7 /* MainListItemView.swift in Sources */,
+				21770DE02858C04700ECB5D7 /* APIManager+Search.swift in Sources */,
+				21770DE42858C07A00ECB5D7 /* Date+StringFormat.swift in Sources */,
+				21770DD72858BFB800ECB5D7 /* APIConfigurationProtocol.swift in Sources */,
 				21770DC12858BD2600ECB5D7 /* MainView.swift in Sources */,
 				21770DB628584E2000ECB5D7 /* itunes_search_test.xcdatamodeld in Sources */,
+				21770DDA2858BFE700ECB5D7 /* SearchRoutes.swift in Sources */,
+				21770DDE2858C02500ECB5D7 /* APIManager.swift in Sources */,
 				21770DC42858BD6A00ECB5D7 /* MainViewModel.swift in Sources */,
+				21770DCC2858BF0900ECB5D7 /* Constants.swift in Sources */,
+				21770DE52858C07A00ECB5D7 /* AppExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +485,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21770DCF2858BF8100ECB5D7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		21770DD22858BF8E00ECB5D7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21770DD02858BF8100ECB5D7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21770DCF2858BF8100ECB5D7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		21770DD32858BF8E00ECB5D7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21770DD22858BF8E00ECB5D7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		21770DB428584E2000ECB5D7 /* itunes_search_test.xcdatamodeld */ = {
