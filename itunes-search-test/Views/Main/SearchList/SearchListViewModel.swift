@@ -96,7 +96,7 @@ extension SearchListViewModel {
     }
     
     var showRecentlyVisited: Bool {
-        movieList.isEmpty && loadingState == .idle
+        movieList.isEmpty && loadingState == .idle && searchText.isEmpty
     }
 }
 
