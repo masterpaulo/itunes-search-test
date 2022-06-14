@@ -14,11 +14,22 @@ struct FavoritesListView: View {
     
     @State private var selectedTrackId: Int?
     
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\.lastVisitDate, order: .reverse)],
+        predicate: NSPredicate(format: "isFavorite == YES")
+    )
+    var items: FetchedResults<Item>
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(1...10, id: \.self) { i in
-                    Text("Favorite item \(i)")
+                ForEach(items, id: \.trackId) { item in
+                    let detailsVM = DetailsViewModel(movie: item)
+                    NavigationLink(destination: DetailsView(viewModel: detailsVM),
+                                   tag: Int(item.trackId),
+                                   selection: $selectedTrackId) {
+                        MainListItemView(viewModel: MainListItemViewModel(item: item))
+                    }
                 }
             }
             .navigationBarTitle("Favorites")

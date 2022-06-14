@@ -13,6 +13,8 @@ import Combine
 
 class SearchListViewModel: BaseViewModel {
     
+    var context = DataManager.shared.container.viewContext
+    
    // MARK: - Published Properites
     
     @Published var showErrorMessage: String?
@@ -34,6 +36,7 @@ class SearchListViewModel: BaseViewModel {
     
     func bindViewModel() {
         bindSearhText()
+        bindManagedObjectConttextDidSave()
     }
     
     private func bindSearhText() {
@@ -43,6 +46,15 @@ class SearchListViewModel: BaseViewModel {
                 // Only trigger request if search text has more than 3 characters
                 guard text.count > 3 else { return }
                 self.fetchItems(search: text)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func bindManagedObjectConttextDidSave() {
+        NotificationCenter.default
+            .publisher(for: .NSManagedObjectContextDidSave, object: context)
+            .sink { _ in
+                self.movieList = self.movieList
             }
             .store(in: &subscriptions)
     }
@@ -70,7 +82,10 @@ extension SearchListViewModel {
         requestLoader.searchMovieItems(term: encodedText) { [weak self] result in
             switch result {
             case .success(let list):
-                self?.movieList = list.items
+                // Map resulting item list to look for existing objects persisted
+                self?.movieList = list.items.map { item in
+                    DataManager.shared.getItem(with: item.trackId) ?? item
+                }
                 self?.loadingState = .loaded
             case .failure(let err):
                 dump(err)

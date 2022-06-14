@@ -66,6 +66,9 @@ struct DetailsView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.saveItemToContext()
+        }
     }
 }
 

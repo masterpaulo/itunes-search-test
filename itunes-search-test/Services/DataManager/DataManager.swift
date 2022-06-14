@@ -1,5 +1,5 @@
 //
-//  Persistence.swift
+//  DataManager.swift
 //  itunes-search-test
 //
 //  Created by John Paulo on 6/14/22.
@@ -7,11 +7,11 @@
 
 import CoreData
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+struct DataManager {
+    static let shared = DataManager()
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
+    static var preview: DataManager = {
+        let result = DataManager(inMemory: true)
         let viewContext = result.container.viewContext
         for i in 0..<10 {
             let newItem = Item(context: viewContext)

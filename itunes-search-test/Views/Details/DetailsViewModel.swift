@@ -14,6 +14,7 @@ class DetailsViewModel: ObservableObject {
     @Published var favorite: Bool {
         didSet {
             movie.isFavorite = favorite
+            DataManager.shared.save(item: movie)
         }
     }
     
@@ -28,6 +29,10 @@ class DetailsViewModel: ObservableObject {
     
     func toggleFavorite() {
         favorite.toggle()
+    }
+    
+    func saveItemToContext() {
+        DataManager.shared.save(item: movie)
     }
 }
 

@@ -73,21 +73,23 @@ public class Item: NSManagedObject, Decodable {
         guard let context = decoder.userInfo[CodingUserInfoKey.context!] as? NSManagedObjectContext else { fatalError() }
         guard let entity = NSEntityDescription.entity(forEntityName: K.CoreDataEntity.item, in: context) else { fatalError() }
 
-        self.init(entity: entity, insertInto: context)
+        self.init(entity: entity, insertInto: nil)
         
         let id = try container.decode(Int.self, forKey: .trackId)
         trackId = Int64(id)
         trackName = try container.decode(String.self, forKey: .trackName)
         artworkStringUrl = try container.decode(String.self, forKey: .artworkStringUrl)
         genre = try container.decode(String.self, forKey: .genre)
-        trackPrice = try container.decode(Float.self, forKey: .trackPrice)
+        trackPrice = try container.decodeIfPresent(Float.self, forKey: .trackPrice) ?? 0.0
         currency = try container.decode(String.self, forKey: .currency)
         longDescription = try container.decodeIfPresent(String.self, forKey: .longDescription)
+        isFavorite = false
+        
     }
     
     convenience init(trackId: Int64, trackName: String, artworkStringUrl: String, genre: String, trackPrice: Float, currency: String, longDescription: String?, isFavorite: Bool, lastVisitDate: Date? = nil) {
         
-        let context = PersistenceController.shared.container.viewContext
+        let context = DataManager.shared.container.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: K.CoreDataEntity.item, in: context) else { fatalError() }
 
         self.init(entity: entity, insertInto: context)

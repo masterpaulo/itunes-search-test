@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct ITunesSearchApp: App {
-    let persistenceController = PersistenceController.shared
+    let dataManager = DataManager.shared
 
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import CoreData
 
 class APIManager {
     static let shared = APIManager()
@@ -19,16 +20,11 @@ class APIManager {
     @discardableResult
     private func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (DataResponse<T, AFError>)->Void) -> DataRequest {
 
-        let context = PersistenceController.shared.container.viewContext
+        let context = DataManager.shared.container.viewContext
         decoder.userInfo[CodingUserInfoKey.context!] = context
         
         let request = AF.request(route)
                         .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
-                            do {
-                                try context.save()
-                            } catch {
-                                print("Something went wrong")
-                            }
                             completion(response)
         }
         

@@ -14,6 +14,7 @@ class MainListItemViewModel: ObservableObject {
     @Published var favorite: Bool {
         didSet {
             item.isFavorite = favorite
+            DataManager.shared.save(item: item)
         }
     }
     

@@ -12,6 +12,6 @@
         <attribute name="trackPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="0" width="128" height="14"/>
+        <element name="Item" positionX="-63" positionY="0" width="128" height="164"/>
     </elements>
 </model>
